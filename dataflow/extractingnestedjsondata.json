@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "customersdataset",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
 				}
 			],
 			"sinks": [
@@ -42,6 +49,15 @@
 				"     documentForm: 'singleDocument',",
 				"     unquotedColumnNames: true,",
 				"     singleQuoted: true) ~> source1",
+				"source(output(",
+				"          rid as integer,",
+				"          first_name as string,",
+				"          last_name as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source2",
 				"source1 foldDown(unroll(data),",
 				"     mapColumn(",
 				"          customer_id = data.customer_rid,",
