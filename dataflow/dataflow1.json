@@ -34,7 +34,10 @@
 				"     inferDriftedColumnTypes: true,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
-				"source1 pivot(columnNaming: '$N$V',",
+				"source1 pivot(groupBy(sunday,",
+				"          {} = ERROR_FUNCTION('')),",
+				"     pivotBy(year),",
+				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivot1"
 			]
 		}
