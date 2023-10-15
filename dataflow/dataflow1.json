@@ -39,7 +39,7 @@
 				"          date as date",
 				"     ),",
 				"     ungroupBy(year),",
-				"     lateral: false,",
+				"     lateral: true,",
 				"     ignoreNullPivots: false) ~> unpivot1"
 			]
 		}
