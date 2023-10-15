@@ -23,7 +23,9 @@
 				"     inferDriftedColumnTypes: true,",
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false,",
-				"     documentForm: 'documentPerLine') ~> source1"
+				"     documentForm: 'singleDocument',",
+				"     unquotedColumnNames: true,",
+				"     singleQuoted: true) ~> source1"
 			]
 		}
 	}
