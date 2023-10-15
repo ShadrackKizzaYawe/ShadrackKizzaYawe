@@ -13,7 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "unpivot1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          year as integer,",
@@ -29,7 +33,13 @@
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> source1"
+				"     format: 'table') ~> source1",
+				"source1 unpivot(output(",
+				"          ",
+				"     ),",
+				"     ungroupBy(year),",
+				"     lateral: true,",
+				"     ignoreNullPivots: false) ~> unpivot1"
 			]
 		}
 	}
