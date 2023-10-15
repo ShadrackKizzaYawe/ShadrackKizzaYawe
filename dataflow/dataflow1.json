@@ -18,7 +18,7 @@
 					"name": "unpivot1"
 				},
 				{
-					"name": "derivedColumn1"
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -44,7 +44,13 @@
 				"     ungroupBy(year),",
 				"     lateral: true,",
 				"     ignoreNullPivots: false) ~> unpivot1",
-				"unpivot1 derive(date = ERROR_FUNCTION('')) ~> derivedColumn1"
+				"unpivot1 select(mapColumn(",
+				"          year,",
+				"          dayoftheweek,",
+				"          date",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
