@@ -35,7 +35,7 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
 				"source1 unpivot(output(",
-				"          day as string,",
+				"          day_name as string,",
 				"          sunday as string,",
 				"          monday as string,",
 				"          tuesday as string,",
