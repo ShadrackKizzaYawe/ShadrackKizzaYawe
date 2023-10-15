@@ -1,5 +1,5 @@
 {
-	"name": "extractingnestedjsondata",
+	"name": "extractingnestedjsondataandcreatingdmn_customers",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
