@@ -35,10 +35,10 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
 				"source1 unpivot(output(",
-				"          ",
+				"          dayoftheweek as string",
 				"     ),",
 				"     ungroupBy(year),",
-				"     lateral: true,",
+				"     lateral: false,",
 				"     ignoreNullPivots: false) ~> unpivot1"
 			]
 		}
