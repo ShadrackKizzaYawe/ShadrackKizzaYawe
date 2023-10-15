@@ -15,7 +15,7 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "unpivot1"
+					"name": "pivot1"
 				}
 			],
 			"scriptLines": [
@@ -34,25 +34,8 @@
 				"     inferDriftedColumnTypes: true,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
-				"source1 unpivot(output(",
-				"          day_name as string,",
-				"          sunday as string,",
-				"          monday as string,",
-				"          tuesday as string,",
-				"          wednesday as string,",
-				"          thursday as string,",
-				"          friday as string,",
-				"          saturday as string",
-				"     ),",
-				"     ungroupBy(sunday,",
-				"          monday,",
-				"          tuesday,",
-				"          wednesday,",
-				"          thursday,",
-				"          friday,",
-				"          saturday),",
-				"     lateral: false,",
-				"     ignoreNullPivots: false) ~> unpivot1"
+				"source1 pivot(columnNaming: '$N$V',",
+				"     lateral: true) ~> pivot1"
 			]
 		}
 	}
