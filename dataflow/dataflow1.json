@@ -13,11 +13,7 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "pivot1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          year as integer,",
@@ -33,12 +29,7 @@
 				"     validateSchema: false,",
 				"     inferDriftedColumnTypes: true,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> source1",
-				"source1 pivot(groupBy(sunday,",
-				"          monday),",
-				"     pivotBy(year),",
-				"     columnNaming: '$N$V',",
-				"     lateral: true) ~> pivot1"
+				"     format: 'table') ~> source1"
 			]
 		}
 	}
