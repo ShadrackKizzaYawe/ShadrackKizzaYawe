@@ -16,6 +16,9 @@
 			"transformations": [
 				{
 					"name": "unpivot1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -40,7 +43,8 @@
 				"     ),",
 				"     ungroupBy(year),",
 				"     lateral: true,",
-				"     ignoreNullPivots: false) ~> unpivot1"
+				"     ignoreNullPivots: false) ~> unpivot1",
+				"unpivot1 derive(month = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
