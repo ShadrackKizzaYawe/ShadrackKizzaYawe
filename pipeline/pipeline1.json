@@ -13,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "customeraccounts//accts.json"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.dummyTable"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "JsonSource",
@@ -28,13 +37,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"writeBehavior": "upsert",
-						"upsertSettings": {
-							"useTempDB": true,
-							"keys": [
-								"customer_id"
-							]
-						},
+						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
@@ -61,7 +64,8 @@
 									"type": "Int32"
 								}
 							}
-						]
+						],
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
