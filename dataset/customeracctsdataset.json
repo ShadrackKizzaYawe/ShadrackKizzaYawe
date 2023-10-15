@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "customer_accts"
+			"table": "dmn_customers"
 		}
 	}
 }
