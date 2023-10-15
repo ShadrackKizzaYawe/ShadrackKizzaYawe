@@ -1,0 +1,38 @@
+{
+	"name": "JsonDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "accts.json",
+				"folderPath": "*.json",
+				"container": "customer-accounts"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"data": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"account_name": {
+								"type": "string"
+							},
+							"customer_rid": {
+								"type": "integer"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
