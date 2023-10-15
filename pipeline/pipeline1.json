@@ -20,7 +20,7 @@
 					},
 					{
 						"name": "Destination",
-						"value": "dbo.dummyTable"
+						"value": "dbo.customer_accounts"
 					}
 				],
 				"typeProperties": {
