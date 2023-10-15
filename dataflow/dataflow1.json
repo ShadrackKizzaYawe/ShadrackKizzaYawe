@@ -40,7 +40,10 @@
 				"     ungroupBy(sunday,",
 				"          monday,",
 				"          tuesday,",
-				"          {} = ERROR_FUNCTION('')),",
+				"          wednesday,",
+				"          thursday,",
+				"          friday,",
+				"          saturday),",
 				"     lateral: true,",
 				"     ignoreNullPivots: false) ~> unpivot1"
 			]
