@@ -30,9 +30,10 @@
 				"     documentForm: 'singleDocument',",
 				"     unquotedColumnNames: true,",
 				"     singleQuoted: true) ~> source1",
-				"source1 foldDown(unroll(),",
+				"source1 foldDown(unroll(data),",
 				"     mapColumn(",
-				"          data",
+				"          customer_id = data.customer_rid,",
+				"          account_name = data.account_name",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> flatten1"
