@@ -12,6 +12,10 @@
 					"name": "source1"
 				},
 				{
+					"dataset": {
+						"referenceName": "customeracctsdataset",
+						"type": "DatasetReference"
+					},
 					"name": "source2"
 				}
 			],
@@ -28,7 +32,9 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source1",
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source2"
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source2"
 			]
 		}
 	}
