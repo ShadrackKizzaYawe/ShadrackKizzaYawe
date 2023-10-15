@@ -16,9 +16,6 @@
 			"transformations": [
 				{
 					"name": "unpivot1"
-				},
-				{
-					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -39,18 +36,11 @@
 				"     format: 'table') ~> source1",
 				"source1 unpivot(output(",
 				"          dayoftheweek as string,",
-				"          date as string",
+				"          date as date",
 				"     ),",
 				"     ungroupBy(year),",
 				"     lateral: true,",
-				"     ignoreNullPivots: false) ~> unpivot1",
-				"unpivot1 select(mapColumn(",
-				"          year,",
-				"          dayoftheweek,",
-				"          date",
-				"     ),",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     ignoreNullPivots: false) ~> unpivot1"
 			]
 		}
 	}
