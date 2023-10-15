@@ -43,7 +43,7 @@
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source2",
-				"source1, source2 join(rid == ERROR_FUNCTION(''),",
+				"source1, source2 join(rid == customer_id,",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
