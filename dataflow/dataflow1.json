@@ -44,7 +44,7 @@
 				"     ungroupBy(year),",
 				"     lateral: true,",
 				"     ignoreNullPivots: false) ~> unpivot1",
-				"unpivot1 derive(month = ERROR_FUNCTION('')) ~> derivedColumn1"
+				"unpivot1 derive(date = ERROR_FUNCTION('')) ~> derivedColumn1"
 			]
 		}
 	}
