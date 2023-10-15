@@ -1,0 +1,50 @@
+{
+	"name": "date_day_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "year",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sunday",
+				"type": "varchar"
+			},
+			{
+				"name": "monday",
+				"type": "varchar"
+			},
+			{
+				"name": "tuesday",
+				"type": "varchar"
+			},
+			{
+				"name": "wednesday",
+				"type": "varchar"
+			},
+			{
+				"name": "thursday",
+				"type": "varchar"
+			},
+			{
+				"name": "friday",
+				"type": "varchar"
+			},
+			{
+				"name": "saturday",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "script_src_date_day_lookup"
+		}
+	}
+}
