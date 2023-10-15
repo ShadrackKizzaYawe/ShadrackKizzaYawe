@@ -13,7 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "flatten1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          data as (account_name as string, customer_rid as integer)[]",
@@ -25,7 +29,13 @@
 				"     ignoreNoFilesFound: false,",
 				"     documentForm: 'singleDocument',",
 				"     unquotedColumnNames: true,",
-				"     singleQuoted: true) ~> source1"
+				"     singleQuoted: true) ~> source1",
+				"source1 foldDown(unroll(),",
+				"     mapColumn(",
+				"          data",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> flatten1"
 			]
 		}
 	}

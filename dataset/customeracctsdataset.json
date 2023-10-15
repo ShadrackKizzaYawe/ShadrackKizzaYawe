@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "customeracctsdataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase2",
@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "dummyTable"
+			"table": "customer_accts"
 		}
 	}
 }
