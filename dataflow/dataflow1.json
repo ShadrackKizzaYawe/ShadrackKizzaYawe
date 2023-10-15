@@ -36,7 +36,7 @@
 				"     format: 'table') ~> source1",
 				"source1 unpivot(output(",
 				"          dayoftheweek as string,",
-				"          date as date",
+				"          date as string",
 				"     ),",
 				"     ungroupBy(year),",
 				"     lateral: true,",
