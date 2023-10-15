@@ -1,0 +1,12 @@
+{
+	"name": "MariaDB1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "MariaDB",
+		"typeProperties": {
+			"connectionString": "server=mat-trn-src.co4vks4ks8wo.eu-west-1.rds.amazonaws.com;port=3306;database=greenwave;uid=greenwave_user",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEIzRUYyNkY2LTJGQzktNDNDOC1BNzEzLUE1ODZDMDY4RTM5Ml84MDA1ODc1NC0xMmFiLTRhNDItYWQ4Yi04NDVmYjNkNjU5M2YiDQp9"
+		}
+	}
+}

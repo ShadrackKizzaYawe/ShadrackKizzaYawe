@@ -1,0 +1,9 @@
+{
+	"name": "skyadf1",
+	"location": "southafricanorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6ffb4880-4996-4845-a734-28bf2e2f9ed4",
+		"tenantId": "65692b8c-1c2b-4492-ab91-dc6a6658441f"
+	}
+}
